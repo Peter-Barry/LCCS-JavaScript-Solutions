@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <input id="nameIn" placeholder="Name">
+    <input id="ageIn" placeholder="Age">
+    <button onclick="addData()">
+       Add data to List
+    </button>
+    <br\>
+    <br\>
+    Output:
+      <br\>
+      <textarea id="outDisplay" readonly.>
+      </textarea>  
+    <script>
+      var myNames=[];
+      var myAges=[];
+      var nameEle=document.getElementById("nameIn");
+      var ageEle=document.getElementById("ageIn");
+      var outEle=document.getElementById("outDisplay");
+      function addData(){
+        myNames.push(nameEle.value);
+        myAges.push(ageEle.value);
+        displayData();
+      }
+      function displayData(){
+        outEle.value=""; 
+        for(var index=0; index<myNames.length; index+=1){
+          outEle.value+=myNames[index] + "\t\t"+myAges[index]+"\n"
+        }
+      }
+    </script>
+  </body>
+</html>
